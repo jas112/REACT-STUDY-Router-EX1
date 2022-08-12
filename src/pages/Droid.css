@@ -1,7 +1,21 @@
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-15px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
 .Droid-img{
     width: 300px;
     max-width:90%;
-    box-shadow: 0px 0px 15px #8601cd;
+    box-shadow: 0px 0px 15px #0385dc;
     opacity: .8;
-    margin: 25px 0;
+    margin: 35px 0;
+    border-radius: 5px;
+    animation: float 4s ease-in-out infinite;
 }

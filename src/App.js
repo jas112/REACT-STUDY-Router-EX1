@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Header from './components/Header';
 import About from './pages/About';
 import Droid from './pages/Droid';
 import Contact from './pages/Contact';
@@ -11,8 +12,9 @@ function App() {
       <Router>
         <div className="App">
           <div className='container'>
+            <Header />
             <Routes>
-              <Route path="/about" element={<About />} />
+              <Route path="/" element={<About />} />
               <Route path="/droid" element={<Droid />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
