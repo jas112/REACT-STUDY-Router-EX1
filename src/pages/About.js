@@ -4,8 +4,8 @@ class About extends Component {
   render() {
     return (
       <div>
-        <h1>About</h1>
-        <div>learn more here...</div>
+        <h1 className='pageTitle'>About</h1>
+        <div className='pageDetail'>learn more here...</div>
       </div>
     )
   }

@@ -41,6 +41,22 @@
   border-radius: 5px;
 }
 
+.pageTitle{
+  font-size: 40px;
+  font-weight: bold;
+  color: #0385dc;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+  text-shadow: 0px 0px 19px #0385dc;
+  animation: pageTitleGlow 1s ease-in-out infinite;
+}
+
+.pageDetail{
+  font-weight: bold;
+  color: #0385dc;
+  text-shadow: 0px 0px 19px #0385dc;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -48,4 +64,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes pageTitleGlow {
+  0%{text-shadow: 0px 0px 19px #0385dc;}
+  50%{text-shadow: 0px 0px 9px #0385dc;}
+  100%{text-shadow: 0px 0px 19px #0385dc;}
 }
