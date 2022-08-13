@@ -11,11 +11,36 @@
 }
 
 .Droid-img{
-    width: 300px;
-    max-width:90%;
+    width: 290px;
+    max-width:98.6%;
+    background-color: linear-gradient(#0385dc, #dd04fe);
     box-shadow: 0px 0px 15px #0385dc;
     opacity: .8;
-    margin: 35px 0;
+    /* margin: 35px 0; */
+    border-radius: 5px;
+    /* animation: float 4s ease-in-out infinite; */
+}
+
+.Droid-imgBox{
+    width: 294px;
+    max-width:95%;
+    padding: 15px;
+    background-color: linear-gradient(#0385dc, #dd04fe);
+    box-shadow: 0px 0px 15px #0385dc;
+    opacity: .8;
+    margin: 35px auto 0;
+    border: 3px solid #0385dc;
     border-radius: 5px;
     animation: float 4s ease-in-out infinite;
+}
+
+.Droid-imgBox:hover{
+    box-shadow: 0px 0px 15px #dd04fe;
+    border: 3px solid #dd04fe;
+    animation: float 4s ease-in-out infinite;
+}
+
+.Droid-imgBox:hover .Droid-img{
+    box-shadow: 0px 0px 15px #dd04fe;
+    /* animation: float 4s ease-in-out infinite; */
 }

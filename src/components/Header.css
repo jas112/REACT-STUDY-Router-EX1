@@ -1,3 +1,15 @@
+@keyframes navLinkGlow {
+    0%{text-shadow: 0px 0px 19px #0385dc;}
+    50%{text-shadow: 0px 0px 9px #0385dc;}
+    100%{text-shadow: 0px 0px 19px #0385dc;}
+  }
+
+  @keyframes navLinkGlowHover {
+    0%{text-shadow: 0px 0px 19px #dd04fe;}
+    50%{text-shadow: 0px 0px 9px #dd04fe;}
+    100%{text-shadow: 0px 0px 19px #dd04fe;}
+  }
+
 .Header-console{
     width: 400px;
     max-width: 100%;
@@ -15,11 +27,13 @@
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px;
     text-shadow: 0px 0px 9px #0385dc;
+    animation: navLinkGlow 1.2s ease-in-out infinite;
     transition: 1s;
 }
 
 .Header-navLink:hover{
     color: #dd04fe;
     text-shadow: 0px 0px 15px#dd04fe;
+    animation: navLinkGlowHover 1.2s ease-in-out infinite;
     transition: 1s;
 }

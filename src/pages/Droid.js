@@ -8,7 +8,7 @@ class Droid extends Component {
       <div>
         <h1 className='pageTitle'>Droid</h1>
         <div className='pageDetail'>your droid is stored here...</div>
-        <div>
+        <div className='Droid-imgBox'>
           <img src={imgURL} className='Droid-img' alt='Droid Image by Alec Favale on Unsplash' title='Droid Image by Alec Favale on Unsplash' />
         </div>
       </div>
