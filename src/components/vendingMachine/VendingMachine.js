@@ -16,6 +16,11 @@ class VendingMachine extends Component {
                     <div className='VendingMachine-display-BG'>
                         <img src={imgURL} />
                     </div>
+                    <div className='VendingMachine-display-content'>
+                        <Link to='/chips' className='VendingMachine-Link'>CHIPS</Link>
+                        <Link to='/sardines' className='VendingMachine-Link'>SARDINES</Link>
+                        <Link to='/soda' className='VendingMachine-Link'>SODA</Link>
+                    </div>
                 </div>
             </div>
         </div>
