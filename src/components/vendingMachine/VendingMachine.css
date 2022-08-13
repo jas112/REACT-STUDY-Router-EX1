@@ -15,9 +15,17 @@
     position: relative;
     left: 0;
     top: 0;
-    width: 115%;
+    width: 100%;
     height: auto;
     /* border: 2px solid; */
+}
+
+.VendingMachine-display-BG img{
+    position: relative;
+    left: -40px;
+    top: -25px;
+    width: auto;
+    height: 100%;
 }
 
 .VendingMachine-display-BG:before {
@@ -48,25 +56,25 @@
     width: 280px;
     max-width: 100%;
     height: 65px;
-    border: 3px solid #0385dc;
+    border: 3px dotted #0385dc;
     border-radius: 69px;
     background-color: #11111195;
     text-decoration: none;
     font-size: 50px;
     font-weight: bold;
     color: #0385dc;
-    -webkit-text-fill-color: #0385dc;
-    -webkit-text-stroke: 1px;
-    text-shadow: 0px 0px 9px #0385dc;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px;
+    text-shadow: 0px 0px 14px #0385dc;
     box-shadow: 0px 0px 15px #0385dc;
-    transition: 1s;
+    transition: .5s;
 }
 
 .VendingMachine-Link:hover{
-    border: 3px solid #00b70f;
-    color: #00b70f;
-    -webkit-text-fill-color: #00b70f;
-    text-shadow: 0px 0px 9px #00b70f;
-    box-shadow: 0px 0px 15px #00b70f;
-    transition: 1s;
+    border: 3px solid #dd04fe;
+    color: #dd04fe;
+    -webkit-text-fill-color: #dd04fe;
+    text-shadow: 0px 0px 9px #dd04fe;
+    box-shadow: 0px 0px 15px #dd04fe;
+    transition: .5s;
 }

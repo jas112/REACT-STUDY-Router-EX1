@@ -22,7 +22,7 @@ class Droid extends Component {
         <h1 className='pageTitle'>Droid {this.props.name}</h1>
         <div className='pageDetail'>your droid is stored here...</div>
         <div className='Droid-imgBox'>
-          <img src={imgURL} className='Droid-img' alt='Droid Image by Alec Favale on Unsplash' title='Droid Image by Alec Favale on Unsplash' />
+          <img src={imgURL} className='Droid-img' alt='Photo by Alec Favale on Unsplash' title='Photo by Alec Favale on Unsplash' />
         </div>
       </div>
     )
