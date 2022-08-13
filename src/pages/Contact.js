@@ -6,6 +6,9 @@ class Contact extends Component {
     <div>
         <h1 className='pageTitle'>Contact</h1>
         <div className='pageDetail'>reach out to us here...</div>
+        <div className='content-box'>
+            <div className='content-box-display'></div>
+        </div>
       </div>
     )
   }

@@ -6,6 +6,9 @@ class About extends Component {
       <div>
         <h1 className='pageTitle'>About</h1>
         <div className='pageDetail'>learn more here...</div>
+        <div className='content-box'>
+            <div className='content-box-display'></div>
+        </div>
       </div>
     )
   }

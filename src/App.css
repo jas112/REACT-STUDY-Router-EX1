@@ -57,6 +57,43 @@
   text-shadow: 0px 0px 19px #0385dc;
 }
 
+.content-box{
+  width: 294px;
+  max-width:95%;
+  height: 519.328px;
+  padding: 15px;
+  background-color: linear-gradient(#0385dc, #dd04fe);
+  box-shadow: 0px 0px 15px #0385dc;
+  opacity: .8;
+  margin: 35px auto 0;
+  border: 3px solid #0385dc;
+  border-radius: 5px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.content-box:hover{
+  box-shadow: 0px 0px 15px #dd04fe;
+  border: 3px solid #dd04fe;
+  animation: float 4s ease-in-out infinite;
+}
+
+.content-box:hover .Droid-img{
+  box-shadow: 0px 0px 15px #dd04fe;
+  /* animation: float 4s ease-in-out infinite; */
+}
+
+.content-box-display{
+  width: 290px;
+  max-width:98.6%;
+  height: 515.3px;
+  background: linear-gradient(#0385dc20, #0385dc80);
+  box-shadow: 0px 0px 15px #0385dc;
+  opacity: .8;
+  /* margin: 35px 0; */
+  border-radius: 5px;
+  /* animation: float 4s ease-in-out infinite; */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -70,4 +107,10 @@
   0%{text-shadow: 0px 0px 19px #0385dc;}
   50%{text-shadow: 0px 0px 9px #0385dc;}
   100%{text-shadow: 0px 0px 19px #0385dc;}
+}
+
+@keyframes float {
+	0% {transform: translatey(0px);}
+	50% {transform: translatey(-15px);}
+	100% {transform: translatey(0px);}
 }
