@@ -5,9 +5,9 @@ import Header from './components/header/Header';
 // import Droid from './pages/Droid';
 // import Contact from './pages/Contact';
 import VendingMachine from './components/vendingMachine/VendingMachine';
-import Chips from './components/chips/Chips';
+import ChipSelection from './components/chips/ChipSelection';
 import Sardines from './components/sardines/Sardines';
-import Soda from './components/soda/Soda';
+import SodaSelection from './components/sodas/SodaSelection';
 import './App.css';
 
 function App() {
@@ -27,9 +27,9 @@ function App() {
 
               {/* React Router Exercise B Begin */}
               <Route path="/" element={<VendingMachine />} />
-              <Route path="/chips" element={<Chips />} />
+              <Route path="/chips" element={<ChipSelection />} />
               <Route path="/sardines" element={<Sardines />} />
-              <Route path="/soda" element={<Soda />} />
+              <Route path="/soda" element={<SodaSelection />} />
               {/* React Router Exercise B End */}
             </Routes>
           </div>

@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import Soda from './Soda';
+import { v4 as uuidv4 } from 'uuid';
 
-class Soda extends Component {
+class SodaSelection extends Component {
     constructor(props){
         super(props);
         this.state = {
             sodas: JSON.parse(window.localStorage.getItem('sodas') || '[]'),
             sodaCount: JSON.parse(window.localStorage.getItem('sodaCount') || '0'),
         }
-        this.getASoda = this.getASoda.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     generateOrientation(){
@@ -21,9 +24,17 @@ class Soda extends Component {
         return orientation;
     }
 
-    getASoda(){
+    generateSodaSelection(){
+        let sodasSelection = this.state.sodas.map(sodaCan => {
+            <Soda key={sodaCan.id} orientation={sodaCan.orientation} />
+        });
+        return sodasSelection
+    }
+
+    handleClick(){
         let newSodaSelection = {};
         let sodaTransform = this.generateOrientation();
+        newSodaSelection['id'] = uuidv4();
         newSodaSelection['orientation'] = sodaTransform;
         let newSodas = [...this.state.sodas, newSodaSelection];
 
@@ -34,7 +45,7 @@ class Soda extends Component {
         });
     }
 
-    resetSodas(){
+    handleReset(){
         window.localStorage.setItem('sodas', '[]');
         window.localStorage.setItem('sodaCount', '0');
 
@@ -47,11 +58,19 @@ class Soda extends Component {
             <h1 className='pageTitle'>Soda</h1>
             <div className='pageDetail'>Too much fizzy sugar drinks!!!</div>
             <div className='content-box'>
-                <div className='content-box-display'></div>
+                <div className='content-box-display'>
+                    <div className='Sodas-display'>
+
+                    </div>
+                    <div className='Sodas-console'>
+                        <button className='' onClick={this.handleClick}>NOM NOM</button>
+                        <button className='' onClick={this.handleReset}>RESET</button>
+                    </div>
+                </div>
             </div>
         </div>
     )
   }
 }
 
-export default Soda;
+export default SodaSelection;
