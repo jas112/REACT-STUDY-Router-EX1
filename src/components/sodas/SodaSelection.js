@@ -63,7 +63,7 @@ class SodaSelection extends Component {
             <div className='content-box'>
                 <div className='content-box-display'>
                     <div className='Sodas-display'>
-
+                        {sodaCanSelection}
                     </div>
                     <div className='Sodas-console'>
                         <button className='' onClick={this.handleClick}>NOM NOM</button>

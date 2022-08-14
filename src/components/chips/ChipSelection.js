@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Chip from './Chip';
 import { v4 as uuidv4 } from 'uuid';
+import './ChipSelection.css';
 
 class ChipSelection extends Component {
 
@@ -26,9 +27,9 @@ class ChipSelection extends Component {
     }
 
     generateChipSelection(){
-        let chipsSelection = this.state.chips.map(chipBag => {
+        let chipsSelection = this.state.chips.map(chipBag => (
             <Chip key={chipBag.id} orientation={chipBag.orientation} />
-        });
+        ));
         return chipsSelection;
     }
 
@@ -63,12 +64,12 @@ class ChipSelection extends Component {
             <div className='pageDetail'>Plenty of crispy snacks to go around!!!</div>
             <div className='content-box'>
                 <div className='content-box-display'>
-                <div className='Chips-display'>
+                <div className='ChipSelection-display'>
                     {chips}
                 </div>
-                <div className='Chips-console'>
-                    <button className='' onClick={this.handleClick}>NOM NOM</button>
-                    <button className='' onClick={this.handleReset}>RESET</button>
+                <div className='ChipSelection-console'>
+                    <button className='ChipSelection-Btn' onClick={this.handleClick}>NOM NOM</button>
+                    <button className='ChipSelection-Btn' onClick={this.handleReset}>RESET</button>
                 </div>
                 </div>
             </div>
