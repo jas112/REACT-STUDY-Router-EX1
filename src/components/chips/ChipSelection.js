@@ -4,10 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 class ChipSelection extends Component {
 
-    static defaultProps = {
-        imageAssets: ['mari-helin-sardine-can-1', 'mari-helin-sardine-can-2'],
-    }
-
     constructor(props){
         super(props);
         this.state = {
@@ -31,9 +27,9 @@ class ChipSelection extends Component {
 
     generateChipSelection(){
         let chipsSelection = this.state.chips.map(chipBag => {
-            <Chip key={chipBag.id} orientation={chipBag.orientation} image={chipBag.image} />
+            <Chip key={chipBag.id} orientation={chipBag.orientation} />
         });
-        return chipsSelection
+        return chipsSelection;
     }
 
     handleClick(){
@@ -41,13 +37,11 @@ class ChipSelection extends Component {
         let chipTransform = this.generateOrientation();
         newChipSelection['id'] = uuidv4();
         newChipSelection['orientation'] = chipTransform;
-        let randomIdx = Math.floor(Math.random()*this.props.imageAssets.length);
-        console.log(`randomIdx: ${randomIdx}`);
-        newChipSelection['image'] = this.props.imageAssets
+        console.log(`newChipSelection => ${JSON.stringify(newChipSelection)}`);
         let newChips = [...this.state.chips, newChipSelection];
 
         this.setState({chips: newChips, chipCount: this.state.chipCount+=1}, () => {
-            console.log(`Udating local storage...`);
+            console.log(`Updating local storage...`);
             window.localStorage.setItem('chips', JSON.stringify(this.state.chips));
             window.localStorage.setItem('chipCount', JSON.stringify(this.state.chipCount));
         });
@@ -61,6 +55,8 @@ class ChipSelection extends Component {
     }
 
   render() {
+
+    let chips = this.generateChipSelection();
     return (
         <div>
             <h1 className='pageTitle'>Chips</h1>
@@ -68,7 +64,7 @@ class ChipSelection extends Component {
             <div className='content-box'>
                 <div className='content-box-display'>
                 <div className='Chips-display'>
-
+                    {chips}
                 </div>
                 <div className='Chips-console'>
                     <button className='' onClick={this.handleClick}>NOM NOM</button>

@@ -6,7 +6,7 @@ import Header from './components/header/Header';
 // import Contact from './pages/Contact';
 import VendingMachine from './components/vendingMachine/VendingMachine';
 import ChipSelection from './components/chips/ChipSelection';
-import Sardines from './components/sardines/Sardines';
+import SardineSelection from './components/sardines/SardineSelection';
 import SodaSelection from './components/sodas/SodaSelection';
 import './App.css';
 
@@ -28,7 +28,7 @@ function App() {
               {/* React Router Exercise B Begin */}
               <Route path="/" element={<VendingMachine />} />
               <Route path="/chips" element={<ChipSelection />} />
-              <Route path="/sardines" element={<Sardines />} />
+              <Route path="/sardines" element={<SardineSelection />} />
               <Route path="/soda" element={<SodaSelection />} />
               {/* React Router Exercise B End */}
             </Routes>

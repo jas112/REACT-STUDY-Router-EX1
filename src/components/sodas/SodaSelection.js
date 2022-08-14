@@ -36,6 +36,7 @@ class SodaSelection extends Component {
         let sodaTransform = this.generateOrientation();
         newSodaSelection['id'] = uuidv4();
         newSodaSelection['orientation'] = sodaTransform;
+        console.log(`newSodaSelection => ${JSON.stringify(newSodaSelection)}`);
         let newSodas = [...this.state.sodas, newSodaSelection];
 
         this.setState({sodas: newSodas, sodaCount: this.state.sodaCount+=1}, () => {
@@ -53,6 +54,8 @@ class SodaSelection extends Component {
     }
 
   render() {
+
+    let sodaCanSelection = this.generateSodaSelection();
     return (
         <div>
             <h1 className='pageTitle'>Soda</h1>
