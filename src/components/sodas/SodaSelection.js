@@ -70,7 +70,7 @@ class SodaSelection extends Component {
                         {sodaCanSelection}
                     </div>
                     <div className='SodaSelection-console'>
-                        <button className='SodaSelection-Btn' onClick={this.handleClick}>NOM NOM</button>
+                        <button className='SodaSelection-Btn' onClick={this.handleClick}>AHHH!!!</button>
                         <button className='SodaSelection-Btn' onClick={this.handleReset}>RESET</button>
                     </div>
                 </div>

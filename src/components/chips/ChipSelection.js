@@ -67,7 +67,7 @@ class ChipSelection extends Component {
     return (
         <div>
             <h1 className='pageTitle'>Chips</h1>
-            <div className='pageDetail'>{this.state.chipCount <= 0 ? 'Plenty of crispy snacks to go around!!!' : `You have eaten ${this.state.chipCount} bags of chipss!!!`}</div>
+            <div className='pageDetail'>{this.state.chipCount <= 0 ? 'Plenty of crispy snacks to go around!!!' : `You have eaten ${this.state.chipCount} bags of chips!!!`}</div>
             <div className='content-box'>
                 <div className='content-box-display'>
                     <div className='ChipSelection-display'>
