@@ -1,4 +1,4 @@
-.SardineSelection-display{
+.SodaSelection-display{
     position: relative;
     left: 0;
     top: 0;
@@ -8,7 +8,7 @@
     overflow: hidden;
 }
 
-.SardineSelection-console{
+.SodaSelection-console{
     position: relative;
     left: 0;
     bottom: 42px;
@@ -22,7 +22,7 @@
     z-index: 9999;
 }
 
-.SardineSelection-Btn{
+.SodaSelection-Btn{
     background-color: transparent;
     color:#0385dc;
     border: none;
@@ -33,7 +33,7 @@
     transition: 1s;
 }
 
-.SardineSelection-Btn:hover{
+.SodaSelection-Btn:hover{
     color:#e70bef;
     border: 2px solid #e70bef;
     transition: 1s;

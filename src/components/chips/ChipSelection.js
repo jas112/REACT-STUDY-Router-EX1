@@ -28,7 +28,7 @@ class ChipSelection extends Component {
 
     generateChipSelection(){
         let chipsSelection = this.state.chips.map(chipBag => (
-            <Chip key={chipBag.id} orientation={chipBag.orientation} />
+            <Chip key={chipBag.id} orientation={chipBag.orientation} image={chipBag.image} />
         ));
         return chipsSelection;
     }
@@ -38,10 +38,15 @@ class ChipSelection extends Component {
         let chipTransform = this.generateOrientation();
         newChipSelection['id'] = uuidv4();
         newChipSelection['orientation'] = chipTransform;
+        let randomIdx = Math.floor(Math.random()*5);
+        // console.log(`randomIdx: ${randomIdx}`);
+        newChipSelection['image'] = randomIdx;
         console.log(`newChipSelection => ${JSON.stringify(newChipSelection)}`);
         let newChips = [...this.state.chips, newChipSelection];
+        let newChipCount = this.state.chipCount + 1;
+        let NewState = {chips: newChips, chipCount: newChipCount};
 
-        this.setState({chips: newChips, chipCount: this.state.chipCount+=1}, () => {
+        this.setState(NewState, () => {
             console.log(`Updating local storage...`);
             window.localStorage.setItem('chips', JSON.stringify(this.state.chips));
             window.localStorage.setItem('chipCount', JSON.stringify(this.state.chipCount));
@@ -58,19 +63,20 @@ class ChipSelection extends Component {
   render() {
 
     let chips = this.generateChipSelection();
+    console.log(`chipCount => ${this.state.chipCount}`);
     return (
         <div>
             <h1 className='pageTitle'>Chips</h1>
-            <div className='pageDetail'>Plenty of crispy snacks to go around!!!</div>
+            <div className='pageDetail'>{this.state.chipCount <= 0 ? 'Plenty of crispy snacks to go around!!!' : `You have eaten ${this.state.chipCount} bags of chipss!!!`}</div>
             <div className='content-box'>
                 <div className='content-box-display'>
-                <div className='ChipSelection-display'>
-                    {chips}
-                </div>
-                <div className='ChipSelection-console'>
-                    <button className='ChipSelection-Btn' onClick={this.handleClick}>NOM NOM</button>
-                    <button className='ChipSelection-Btn' onClick={this.handleReset}>RESET</button>
-                </div>
+                    <div className='ChipSelection-display'>
+                        {chips}
+                    </div>
+                    <div className='ChipSelection-console'>
+                        <button className='ChipSelection-Btn' onClick={this.handleClick}>NOM NOM</button>
+                        <button className='ChipSelection-Btn' onClick={this.handleReset}>RESET</button>
+                    </div>
                 </div>
             </div>
         </div>

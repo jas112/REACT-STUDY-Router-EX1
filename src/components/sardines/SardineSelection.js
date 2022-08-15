@@ -5,10 +5,6 @@ import './SardineSelection.css';
 
 class SardineSelection extends Component {
 
-    static defaultProps = {
-        imageAssets: ['mari-helin-sardine-can-1', 'mari-helin-sardine-can-2'],
-    }
-
     constructor(props){
         super(props);
         this.state = {
@@ -22,8 +18,8 @@ class SardineSelection extends Component {
     generateOrientation(){
 
         let rotationAngle = Math.random() * 90 - 45;
-        let xPosition = Math.random() * 40 - 20;
-        let yPosition = Math.random() * 40 - 20;
+        let xPosition = Math.random() * 20 - 10;
+        let yPosition = Math.random() * 20 - 10;
 
         let orientation = `translate(${xPosition}px, ${yPosition}px) rotate(${rotationAngle}deg)`;
 
@@ -31,9 +27,9 @@ class SardineSelection extends Component {
     }
 
     generateSardineSelection(){
-        let sardineCanSelection = this.state.sardines.map(sardineCan => {
+        let sardineCanSelection = this.state.sardines.map(sardineCan => (
             <Sardines key={sardineCan.id} orientation={sardineCan.orientation} image={sardineCan.image} />
-        });
+        ));
         return sardineCanSelection;
     }
 
@@ -42,9 +38,9 @@ class SardineSelection extends Component {
         let sardineTransform = this.generateOrientation();
         newSardineCanSelection['id'] = uuidv4();
         newSardineCanSelection['orientation'] = sardineTransform;
-        let randomIdx = Math.floor(Math.random()*this.props.imageAssets.length);
+        let randomIdx = Math.floor(Math.random()*2);
         console.log(`randomIdx: ${randomIdx}`);
-        newSardineCanSelection['image'] = this.props.imageAssets[randomIdx];
+        newSardineCanSelection['image'] = randomIdx;
         console.log(`newSardineCanSelection => ${JSON.stringify(newSardineCanSelection)}`);
         let newSardines = [...this.state.sardines, newSardineCanSelection];
 
@@ -63,19 +59,22 @@ class SardineSelection extends Component {
     }
 
   render() {
+
+    let sardineCanSelection = this.generateSardineSelection();
+
     return (
         <div>
             <h1 className='pageTitle'>Sardines</h1>
-            <div className='pageDetail'>Yummy eats make a savory treat!!!</div>
+            <div className='pageDetail'>{this.state.sardinesCount <= 0 ? 'Yummy eats make a savory treat!!!' : `You have eaten ${this.state.sardinesCount} cans of sardines!!!`}</div>
             <div className='content-box'>
                 <div className='content-box-display'>
-                <div className='SardinesSelection-display'>
-
-                </div>
-                <div className='SardinesSelection-console'>
-                    <button className='' onClick={this.handleClick}>YUM YUM</button>
-                    <button className='' onClick={this.handleReset}>RESET</button>
-                </div>
+                    <div className='SardineSelection-display'>
+                        {sardineCanSelection}
+                    </div>
+                    <div className='SardineSelection-console'>
+                        <button className='SardineSelection-Btn' onClick={this.handleClick}>YUM YUM</button>
+                        <button className='SardineSelection-Btn' onClick={this.handleReset}>RESET</button>
+                    </div>
                 </div>
             </div>
         </div>

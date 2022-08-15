@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+import SodaCan1 from '../../assets/coke-soda-can.png';
+import SodaCan2 from '../../assets/pepsi-soda-can.png';
+import SodaCan3 from '../../assets/crush-soda-can.png';
 import './Soda.css';
 
 class Soda extends Component {
   render() {
-    let imgSrc = `../../assets/Soda.PNG`;
+
+    let images = [SodaCan1, SodaCan2, SodaCan3];
+    let selectedSodaCan = images[this.props.image];
+
     return (
-      <div className='Soda'>
-        <img className='Soda-img' style={{transform: this.props.orientation}} src={imgSrc} alt='Photo by Unknown Artist ' />
-      </div>
+        <img className='Soda-img' style={{transform: this.props.orientation}} src={selectedSodaCan} alt='Photo by Unknown Artist ' />
     )
   }
 }

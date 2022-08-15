@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Soda from './Soda';
 import { v4 as uuidv4 } from 'uuid';
+import './SodaSelection.css';
 
 class SodaSelection extends Component {
     constructor(props){
@@ -16,8 +17,8 @@ class SodaSelection extends Component {
     generateOrientation(){
 
         let rotationAngle = Math.random() * 90 - 45;
-        let xPosition = Math.random() * 40 - 20;
-        let yPosition = Math.random() * 40 - 20;
+        let xPosition = Math.random() * 20 - 10;
+        let yPosition = Math.random() * 20 - 10;
 
         let orientation = `translate(${xPosition}px, ${yPosition}px) rotate(${rotationAngle}deg)`;
 
@@ -25,9 +26,9 @@ class SodaSelection extends Component {
     }
 
     generateSodaSelection(){
-        let sodasSelection = this.state.sodas.map(sodaCan => {
-            <Soda key={sodaCan.id} orientation={sodaCan.orientation} />
-        });
+        let sodasSelection = this.state.sodas.map(sodaCan => (
+            <Soda key={sodaCan.id} orientation={sodaCan.orientation} image={sodaCan.image} />
+        ));
         return sodasSelection
     }
 
@@ -36,6 +37,9 @@ class SodaSelection extends Component {
         let sodaTransform = this.generateOrientation();
         newSodaSelection['id'] = uuidv4();
         newSodaSelection['orientation'] = sodaTransform;
+        let randomIdx = Math.floor(Math.random()*3);
+        console.log(`randomIdx: ${randomIdx}`);
+        newSodaSelection['image'] = randomIdx;
         console.log(`newSodaSelection => ${JSON.stringify(newSodaSelection)}`);
         let newSodas = [...this.state.sodas, newSodaSelection];
 
@@ -59,15 +63,15 @@ class SodaSelection extends Component {
     return (
         <div>
             <h1 className='pageTitle'>Soda</h1>
-            <div className='pageDetail'>Too much fizzy sugar drinks!!!</div>
+            <div className='pageDetail'>{this.state.sodaCount <= 0 ? 'Too much fizzy sugar drinks!!!' : `You have drunk ${this.state.sodaCount} cans of pop!!!`}</div>
             <div className='content-box'>
                 <div className='content-box-display'>
-                    <div className='Sodas-display'>
+                    <div className='SodaSelection-display'>
                         {sodaCanSelection}
                     </div>
-                    <div className='Sodas-console'>
-                        <button className='' onClick={this.handleClick}>NOM NOM</button>
-                        <button className='' onClick={this.handleReset}>RESET</button>
+                    <div className='SodaSelection-console'>
+                        <button className='SodaSelection-Btn' onClick={this.handleClick}>NOM NOM</button>
+                        <button className='SodaSelection-Btn' onClick={this.handleReset}>RESET</button>
                     </div>
                 </div>
             </div>
